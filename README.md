@@ -1,7 +1,7 @@
-# Cahaya Mustika Internesia — Locker (Zelt & Vivorti)
+# Cahaya Mustika Internesia — Locker (Zeco & Vivorti)
 Website statis tanpa build. Buka `index.html` atau unggah folder ini ke hosting/GitHub Pages.
 Halaman: index, pages/produk, portofolio, artikel (+4 artikel), kontak.
-WhatsApp: +62 811-3791-1115. Nama model & deskripsi produk adalah contoh; sesuaikan dengan katalog resmi.
+WhatsApp: +62 811-3301-819. Nama model & deskripsi produk adalah contoh; sesuaikan dengan katalog resmi.
 
 ## Cara mengganti gambar placeholder
 Gambar placeholder ada di `assets/images/`. Cara termudah: **timpa file dengan foto Anda, pakai nama file yang sama.**

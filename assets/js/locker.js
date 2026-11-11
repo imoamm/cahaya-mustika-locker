@@ -149,8 +149,8 @@
         set("#pm-name", c.dataset.name); set("#pm-tag", c.dataset.tag); set("#pm-desc", c.dataset.desc);
         $("#pm-list", dlg).innerHTML = c.dataset.feat.split("|").map(t => `<li>${t}</li>`).join("");
         $("#pm-art", dlg).innerHTML = $(".art", c).innerHTML;
-        $("#pm-badge", dlg).className = "badge " + (c.dataset.brand === "zelt" ? "z" : "v");
-        $("#pm-badge", dlg).textContent = c.dataset.brand === "zelt" ? "Zelt" : "Vivorti";
+        $("#pm-badge", dlg).className = "badge " + (c.dataset.brand === "Zeco" ? "z" : "v");
+        $("#pm-badge", dlg).textContent = c.dataset.brand === "Zeco" ? "Zeco" : "Vivorti";
         $("#pm-wa", dlg).href = c.dataset.wa;
         dlg.showModal();
         setTimeout(() => $("#pm-art", dlg).classList.add("play"), 500);
@@ -177,7 +177,7 @@
       `Nama: ${encodeURIComponent(f.get("nama"))}%0AInstansi: ${encodeURIComponent(f.get("instansi") || "-")}%0A` +
       `Brand: ${encodeURIComponent(f.get("brand"))}%0AJumlah pintu: ${encodeURIComponent(f.get("jumlah") || "-")}%0A` +
       `Kebutuhan: ${encodeURIComponent(f.get("pesan") || "-")}`;
-    open("https://wa.me/6281137911115?text=" + t, "_blank", "noopener");
+    open("https://wa.me/628113301819?text=" + t, "_blank", "noopener");
   });
 
   onScroll();
