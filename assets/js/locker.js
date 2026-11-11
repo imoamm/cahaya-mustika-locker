@@ -21,11 +21,9 @@
   setTimeout(hideCover, 2000);
 
   /* header & progress */
-  const hdr = $("#hdr"), prog = $(".prog");
+  const hdr = $("#hdr");
   const onScroll = () => {
     hdr?.classList.toggle("stuck", scrollY > 12);
-    const h = document.documentElement.scrollHeight - innerHeight;
-    prog?.style.setProperty("--sp", h > 0 ? (scrollY / h).toFixed(4) : 0);
     steps();
   };
   addEventListener("scroll", onScroll, { passive: true });

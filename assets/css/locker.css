@@ -386,8 +386,6 @@ dialog[open] .m{animation:pop .5s var(--ease)}
 @keyframes waBob{50%{translate:0 -5px}}
 @media(max-width:640px){.wa .tip{display:none}.wa .b{width:50px;height:50px}}
 
-/* scroll progress */
-.prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:90;transform-origin:left;transform:scaleX(var(--sp,0));background:linear-gradient(90deg,var(--zelt),var(--brand),var(--viv))}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
@@ -466,13 +464,12 @@ dialog[open] .m{animation:pop .5s var(--ease)}
 .acard-body .chip{justify-self:start}
 
 /* ---------- beranda: hero v2 (gambar latar biru + kartu keunggulan menumpuk) ---------- */
-/* Foto ruang/locker opsional: tambahkan --hx-img:url(../images/hero.webp); pada .hx */
-.hx{position:relative;overflow:hidden;color:#fff;padding:150px 0 130px;background:
-  linear-gradient(100deg,rgba(5,16,40,.94) 0%,rgba(7,28,68,.82) 48%,rgba(8,40,96,.45) 100%),
+/* Gambar latar hero: assets/images/hero.webp (1600×900 px) */
+.hx{--hx-img:url(../images/hero.webp);position:relative;overflow:hidden;color:#fff;padding:150px 0 130px;background:
+  linear-gradient(100deg,rgba(5,16,40,.45) 0%,rgba(7,28,68,.18) 45%,transparent 70%),
   var(--hx-img,none),
-  radial-gradient(800px 520px at 82% 20%,rgba(59,130,246,.38),transparent 70%),
-  linear-gradient(160deg,#061431,#0b2d6b);background-size:cover;background-position:center}
-.hx::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 75% 35%,#000 5%,transparent 70%);mask-image:radial-gradient(ellipse at 75% 35%,#000 5%,transparent 70%);pointer-events:none}
+  linear-gradient(160deg,#061431,#0b2d6b);background-size:cover;background-position:right center}
+.hx::before{display:none;content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 75% 35%,#000 5%,transparent 70%);mask-image:radial-gradient(ellipse at 75% 35%,#000 5%,transparent 70%);pointer-events:none}
 .hx-grid{position:relative;display:grid;gap:56px;align-items:center}
 @media(min-width:960px){.hx-grid{grid-template-columns:1.1fr .9fr;gap:64px}.hx{padding:170px 0 150px}}
 .hx h1{font-size:clamp(32px,4.8vw,58px);line-height:1.12;letter-spacing:-.03em;text-transform:none;margin:0 0 22px;max-width:17ch}
@@ -579,3 +576,38 @@ dialog[open] .m{animation:pop .5s var(--ease)}
 .ac2-art .media{transition:transform .5s var(--ease)}
 .ac2:hover .ac2-art .media{transform:scale(1.05)}
 .loc-tag{background:rgba(5,10,24,.5)}
+
+/* foto produk Zelt */
+.art img{display:block;width:100%;height:auto;border-radius:10px}
+.pcard-art .art{width:100%;display:flex;justify-content:center;mix-blend-mode:multiply}
+.pcard-art .art img{width:auto;height:100%;border-radius:0}
+.m-art .art{mix-blend-mode:multiply}
+.m-art .art img{width:auto;max-height:320px;margin:auto;border-radius:0}
+:root[data-theme=dark] .pcard-art .art,:root[data-theme=dark] .m-art .art{mix-blend-mode:normal}
+:root[data-theme=dark] .pcard-art .art img,:root[data-theme=dark] .m-art .art img{border-radius:12px}
+
+/* hero: teks di sisi kiri agar tidak menutupi locker pada gambar */
+@media(min-width:960px){.hx-copy{max-width:min(54%,640px)}.hx h1{max-width:15ch}}
+@media(max-width:959px){.hx{background:linear-gradient(180deg,rgba(5,16,40,.78),rgba(7,28,68,.62)),var(--hx-img),linear-gradient(160deg,#061431,#0b2d6b);background-size:cover;background-position:70% center}}
+
+/* artikel: gaya tulisan panjang */
+.prose .byline{font-size:14px;font-weight:600;color:var(--muted);margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.prose>p:first-of-type:not(.byline){font-size:19px;color:var(--fg)}
+.prose h3{font-size:clamp(19px,2.2vw,23px);margin:30px 0 10px}
+.prose ol{padding:0;margin:0 0 16px;list-style:none;counter-reset:n;display:grid;gap:12px}
+.prose ol li{counter-increment:n;font-weight:500;padding-left:56px;position:relative}
+.prose ol li::before{content:counter(n);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;font:700 13px Poppins;margin:0}
+.prose li b{font-weight:700}
+.prose blockquote{margin:26px 0;padding:18px 22px;border-left:4px solid var(--brand);background:color-mix(in srgb,var(--brand) 8%,transparent);border-radius:0 14px 14px 0;color:var(--fg);font-size:16.5px}
+.prose blockquote b{display:block;margin-bottom:4px;font-family:Poppins}
+.prose .tbl{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:16px}
+.prose table{width:100%;border-collapse:collapse;font-size:15px}
+.prose th,.prose td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.prose th{background:var(--surface);font:600 14px Poppins}
+.prose tr:last-child td{border-bottom:0}.prose td:first-child{font-weight:700}
+.prose td{color:var(--muted)}
+
+/* kartu lokasi: hanya tampilan gambar, tidak bisa diklik */
+.loc{cursor:default;pointer-events:none;user-select:none;-webkit-user-select:none}
+.loc:hover{transform:none;box-shadow:none}
+.loc:hover .art,.loc:hover .loc-img{transform:none}

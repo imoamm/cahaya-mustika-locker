@@ -8,12 +8,12 @@ Gambar placeholder ada di `assets/images/`. Cara termudah: **timpa file dengan f
 
 | Bagian | Folder | Ukuran disarankan |
 |---|---|---|
-| Lokasi Penerapan (Beranda) | `assets/images/lokasi/` | 1200×800 px (`perkantoran.jpg`: 800×1100 px, kartunya tinggi) |
+| Lokasi Penerapan (Beranda) | `assets/images/lokasi/` | 1200×800 px (`perkantoran.webp`: 800×1100 px, kartunya tinggi) |
 | Portofolio (9 kartu) | `assets/images/portofolio/` | 1200×850 px |
 | Artikel (4 gambar) | `assets/images/artikel/` | 1200×750 px |
 
 - Gambar otomatis dipotong (crop) agar pas kartu, jadi objek utama sebaiknya di tengah foto.
-- Format tetap `.jpg` supaya nama file sama. Jika memakai `.webp`/`.png`, ubah juga `src` di HTML.
+- Semua gambar memakai format `.webp`. Jika mengganti dengan JPG/PNG, konversi dulu ke `.webp` agar nama file tetap sama.
 - Satu gambar artikel dipakai di 3 tempat (utama, terbaru, carousel), jadi cukup ganti sekali per artikel.
 - Kompres foto (disarankan di bawah 200 KB per gambar) agar situs tetap cepat.
 - Isi atribut `alt=""` pada gambar di portofolio dan artikel dengan deskripsi singkat untuk SEO/aksesibilitas.
