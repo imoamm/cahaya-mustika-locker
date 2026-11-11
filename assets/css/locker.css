@@ -150,17 +150,6 @@ button{font:inherit;color:inherit;cursor:pointer}
 .wall-tag.t2{right:-10px;bottom:14%;animation:floaty 6s ease-in-out -2s infinite}.wall-tag.t2 i{background:var(--viv)}
 @media(max-width:560px){.wall-tag.t1{left:-4px}.wall-tag.t2{right:-4px}.wall{transform:none}}
 
-/* ---------- marquee ---------- */
-.marq{background:var(--steel);color:#fff;overflow:hidden;border-block:1px solid rgba(255,255,255,.08);position:relative}
-.marq::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:repeating-linear-gradient(135deg,var(--zelt) 0 8px,#0f1623 8px 16px);z-index:2}
-.marq-track{display:flex;width:max-content;animation:marq 32s linear infinite}
-.marq:hover .marq-track{animation-play-state:paused}
-.marq span{display:inline-flex;align-items:center;gap:26px;padding:18px 13px;font:600 clamp(18px,2.4vw,26px) Poppins;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-.marq span::after{content:"";width:12px;height:12px;background:var(--zelt);transform:rotate(45deg)}
-.marq span:nth-child(even)::after{background:var(--viv)}
-.marq span.o{color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.6)}
-@keyframes marq{to{transform:translateX(-50%)}}
-
 /* ---------- sections ---------- */
 section{position:relative}
 .sec{padding:clamp(64px,9vw,110px) 0}
@@ -225,6 +214,8 @@ section{position:relative}
 .pcard-act .btn{padding:11px 14px;font-size:13.5px;border-radius:12px;white-space:nowrap}.pcard-act .btn-wa{flex:1}
 .btn-wa{background:#25D366;color:#04210f}
 .btn-wa:hover{transform:translateY(-3px);box-shadow:0 12px 24px -10px #25D366}
+.btn-wa.btn-blue{background:var(--brand);color:#fff}
+.btn-wa.btn-blue:hover{box-shadow:0 12px 24px -10px var(--brand)}
 
 /* carousel */
 .car-nav{display:flex;gap:8px}
@@ -562,10 +553,7 @@ dialog[open] .m{animation:pop .5s var(--ease)}
 .loc-body{position:relative;z-index:2;display:grid;gap:8px;padding:20px 22px;width:100%}
 .loc-body h3{font-size:clamp(19px,2vw,24px)}
 .loc-body p{font-size:13px;line-height:1.5;color:rgba(255,255,255,.82)}
-.loc-more{font:700 11px/1 Poppins;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
-.loc-more .arr{display:inline-block;transition:transform .3s var(--ease)}
-.loc:hover .loc-more .arr{transform:translateX(5px)}
-.loc-art{inset:0 0 30% 0;padding:48px 18px 6px}
+.loc:hover .loc-art{inset:0 0 30% 0;padding:48px 18px 6px}
 .loc:nth-child(2) .loc-art{padding:56px 34px 10px;inset:0 0 26% 0}
 .loc::after{background:linear-gradient(to top,rgba(5,10,24,.97) 0%,rgba(5,10,24,.82) 30%,rgba(5,10,24,0) 62%)}
 .loc-art{display:block;padding:0!important;inset:0!important}
